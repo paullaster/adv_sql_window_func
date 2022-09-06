@@ -7,5 +7,5 @@ create a running total of standard_amt_usd
  and a second with the running total.
 */
 SELECT standard_amt_usd,
-SUM(standard_amt_usd) OVER(ORDER BY occurred_at)
+SUM(standard_amt_usd) OVER(ORDER BY occurred_at) running_total
 FROM orders
