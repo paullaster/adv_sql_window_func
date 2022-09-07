@@ -13,7 +13,10 @@ SELECT
 account_id,
 occurred_at,
 standard_qty,
-NTILE(4) OVER(PARTITION BY account_id ORDER BY standard_qty) standard_quartile
+NTILE(4) 
+OVER(
+PARTITION BY account_id 
+ORDER BY standard_qty) standard_quartile
 FROM orders
 
 /*
@@ -46,5 +49,8 @@ SELECT
 account_id,
 occurred_at,
 total_amt_usd,
-NTILE(100) OVER(PARTITION BY account_id ORDER BY total_amt_usd) total_percentile
+NTILE(100) 
+OVER(
+PARTITION BY account_id 
+ORDER BY total_amt_usd) total_percentile
 FROM orders
